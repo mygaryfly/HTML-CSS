@@ -19,4 +19,4 @@
 </html>
 ```
 > 结构解析
-![](./ReadmeImg/html结构.jpg)
+![](../ReadmeImg/html结构.jpg)
