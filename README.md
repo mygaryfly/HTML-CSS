@@ -8,4 +8,4 @@
 * HTML文档也叫做 web 页面
 
 #### 学习前端的每一天
-[day-01](./days/day1.md)
+[day-01 HTML的结构和标签](./days/day1.md)
