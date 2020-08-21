@@ -9,3 +9,4 @@
 
 #### 学习前端的每一天
 [day-01 HTML的结构和标签](./days/day1.md)
+[day-02 HTML的属性](./days/day2.md)
