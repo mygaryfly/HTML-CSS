@@ -19,4 +19,4 @@
 </html>
 ```
 
-![](../ReadmeImg/html结构.jpg)
+![](../HTML-CSS/ReadmeImg/html结构.jpg)
