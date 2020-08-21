@@ -1,22 +1,11 @@
 ### HTML基础知识
+>
+* HTML 指的是超文本标记语言: HyperText Markup Language
+* HTML 不是一种编程语言，而是一种标记语言
+* 标记语言是一套标记标签 (markup tag)
+* HTML 使用标记标签来描述网页
+* HTML 文档包含了HTML 标签及文本内容
+* HTML文档也叫做 web 页面
 
-#### 一，HTML的结构
-> 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
-</head>
-<body>
- 
-<h1>我的第一个标题</h1>
- 
-<p>我的第一个段落。</p>
- 
-</body>
-</html>
-```
-
-![](./ReadmeImg/html结构.jpg)
+#### 学习前端的每一天
+[day-01](./days/day1.md)
