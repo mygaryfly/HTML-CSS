@@ -10,3 +10,5 @@
 ### 学习前端的每一天
 1. [day-01 HTML的结构和标签](./days/day1.md)
 2. [day-02 HTML的属性](./days/day2.md)
+3. [day-03 SVG标签](./days/day3.md)
+4. [day-04 SCRIPT标签](./days/day4.md)
