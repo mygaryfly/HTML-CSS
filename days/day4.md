@@ -9,8 +9,9 @@
 
 ##### 1.2 属性
 
->![](./images/script属性1.png)
+> * `<script>` 标签支持 HTML 的全局属性
+![](./images/script属性1.png)
 
 
 
-* `<script>` 标签支持 HTML 的全局属性
+
