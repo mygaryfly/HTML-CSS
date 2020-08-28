@@ -13,6 +13,6 @@
 
 ![](./images/script属性1.png)
 
-<img src="./images/script属性.png">
+<img src="./images/script属性.png" alt="属性图片">
 
 
