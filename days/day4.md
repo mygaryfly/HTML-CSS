@@ -8,9 +8,13 @@
 * JavaScript 通常用于图像操作、表单验证以及动态内容更改。
 
 ##### 1.2 属性
-![](./images/script属性1.png)
+
+>![](./images/script属性1.png)
 
 
-![](./images/script属性.png)
+
+
+
+>![](./images/script属性.png)
 
 * `<script>` 标签支持 HTML 的全局属性
