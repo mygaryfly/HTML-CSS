@@ -99,12 +99,12 @@
         <td>定义表格的表头</td>
     </tr>
     <tr>
-        <td>row 1, cell 1</td>
-        <td>row 1, cell 2</td>
-    </tr>
-    <tr>
         <td>&lt tr &gt</td>
         <td>定义表格的行</td>
+    </tr>
+    <tr>
+        <td>&lt td &gt</td>
+        <td>定义表格单元</td>
     </tr>
     <tr>
         <td>&lt caption &gt</td>
