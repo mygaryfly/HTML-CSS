@@ -12,3 +12,4 @@
 2. [day-02 HTML的属性](./days/day2.md)
 3. [day-03 SVG标签](./days/day3.md)
 4. [day-04 SCRIPT标签](./days/day4.md)
+5. [day-05 表格标签](./days/day5.md)
