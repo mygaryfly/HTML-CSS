@@ -1,3 +1,7 @@
+
+<img src="./images/hcj.jpg" width=110>
+<br>
+
 ### HTML基础知识
 >
 * HTML 指的是超文本标记语言: HyperText Markup Language
