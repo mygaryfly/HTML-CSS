@@ -83,12 +83,13 @@
     </tr>
 </table>
 
+<br>
 
 ##### **四，表格标签**
-<table border="1">
+<table border="1" style="background:skyblue;color:black;">
     <tr>
-        <th>标签</th>
-        <th>描述</th>
+        <th style="background:black;color:white;">标签</th>
+        <th style="background:black;color:white;">描述</th>
     </tr>
     <tr>
         <td>&lt table &gt</td>
