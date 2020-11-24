@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定位元素的几种方式</title>
+		<style>
+			
+			/*<link href="./dingwei.css" rel="stylesheet" type="text/css">*/
+			:root{
+				--main-bg-color: coral;
+				--size: 300px;
+			}
+			div{
+				margin: 100px auto;
+				width: var(--size);
+				height: var(--size);
+				border: 1px solid;
+			}
+			
+			#first{
+				background-color: lightblue;
+				display: flex;
+				flex: fixed;
+			}
+			
+			#second{
+				background-color: lightyellow;
+			}
+			
+			#third{
+				background-color: lightgreen;
+				border-radius: 50%;
+			}
+			
+			#forth{
+				background-color: var(--main-bg-color)
+			}	
+			
+		</style>	
+	</head>
+	<body>
+		<div id="first"></div>
+		<div id="second"></div>
+		<div id="third"></div>
+		<div id="forth"></div>		
+	</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>圆点定位</title>
+        <link rel="stylesheet" href="./practice_flex02.css">
+        <style>
+            .square {
+                display: flex;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                margin: 5px;
+            }
+
+            .point {
+                width: 30px;
+                height: 30px;
+                background-color: black;
+                border-radius: 50%;
+            }
+
+            div:nth-child(2) {
+                justify-content: center;
+            }
+
+            div:nth-child(3) {
+                justify-content: flex-end;
+            }
+
+            div:nth-child(4) {
+                justify-content: space-between;
+            }
+
+            div:nth-child(5) {
+                flex-direction: row-reverse;
+                justify-content:;
+            }
+            
+            div:nth-child(5) > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+            }
+
+            div:nth-child(6){
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            div:nth-child(6) > div:first-child{
+                align-self: flex-start;
+            }
+
+            div:nth-child(6) > div:nth-child(3){
+                align-self: flex-end;
+            }
+
+            div:nth-child(7){
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            div:nth-child(7) > div {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: space-between;
+                
+            }
+
+            div:nth-child(7) > div:nth-child(2) {
+                justify-content: center;
+                
+            }
+
+            div:nth-child(8) {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            div:nth-child(9) {
+                justify-content: center;
+                align-items: center;
+            }
+
+            div:nth-child(10) { 
+                justify-content: flex-end;
+            }
+
+            div:nth-child(10) > div {
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+
+            div:nth-child(11) > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            div:nth-child(12) { 
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+
+            div:nth-child(13) {
+                justify-content: space-between;
+            }
+
+            div:nth-child(13) > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            div:nth-child(14) {
+                justify-content: space-between;
+            }
+
+            div:nth-child(14) > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            div:nth-child(15) {
+                flex-direction: column-reverse;
+            }
+
+            div:nth-child(16) {
+                justify-content: center;
+                align-items: flex-end;
+
+            }
+
+            div:nth-child(17) {
+                flex-direction: row-reverse;
+                align-items: flex-end;
+
+            }
+
+            div:nth-child(18) > div{
+                display: flex;
+                justify-content: space-between;
+                width: 60%;
+                height: 60%;
+            }
+
+            div:nth-child(18) > div > div:nth-child(2){
+                align-self: flex-end;
+            }
+
+
+            div:nth-child(19) {
+                justify-content: space-between;
+            }
+
+            div:nth-child(19) > div:last-child {
+                display: flex;
+                align-items: center;
+            }
+
+            div:nth-child(20) {
+                justify-content: space-between;
+            }
+            
+            div:nth-child(20) > div:last-child {
+                align-self: flex-end;
+            }
+
+            div:nth-child(21) {
+                flex-direction: column;    
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            div:nth-child(21) > div {
+                display: inherit;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            div:nth-child(21) > div:nth-child(2) {
+                justify-content: center;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="square"> <!--01-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--02-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--03-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--04-->
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--05-->
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>    
+        </div>
+        <div class="square"> <!--06-->
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--07-->
+            <div>
+                <div class="point" style="background-color: red;"></div>
+                <div class="point" style="background-color: red;"></div>
+            </div>
+            <div>
+                <div class="point" style="background-color: blue;"></div>
+            </div>
+            <div>
+                <div class="point" style="background-color:yellow;"></div>
+                <div class="point" style="background-color:yellow;"></div>
+            </div>
+        </div>
+        <div class="square"> <!--08-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--09-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--10-->
+            <div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--11-->
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--12-->
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--13-->
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--14-->
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--15-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--16-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--17-->
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--18-->
+            <div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--19-->
+            <div>
+                <div class="point"></div>
+             </div>
+             <div>   
+                <div class="point"></div>
+            </div>
+        </div>
+        <div class="square"> <!--20-->
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="square"> <!--21-->
+            <div style="background-color: lightcoral;">
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div style="background-color: blueviolet;">
+                <div class="point"></div>
+            </div>
+            <div style="background-color: cornflowerblue;">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+    </body>
+</html>

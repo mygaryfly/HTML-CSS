@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用flex制作骰子</title>
+        <style>
+
+            :root {
+                --size: 150vh;
+            }
+
+            .main {
+                position: absolute;
+                -display: flex;
+                -justify-content: center;
+                -align-items: center;                
+                width: calc(var(--size)/2);
+                height: calc(var(--size)/2);
+                top: 50%;
+                left: 50%;
+                transform: translate(calc(var(--size)/-4),calc(var(--size)/-4));
+                background-color: rgba(255,235,205,.5); 
+                border: .5vh solid black;
+                transform-style: preserve-3d;
+            }
+
+            div.main > div {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: calc(var(--size)/8);
+                height: calc(var(--size)/8);
+                border: solid;
+                
+
+            }
+
+            #front {
+                background-color: rgba(143, 76, 252, 0.5)
+            }
+
+            div.main > div:first-child > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: red;
+                border-radius: 50%;
+            }
+
+            #left {
+                transform: translateX(-243px);
+                background-color: rgba(143, 76, 252, 0.5)
+                
+                
+            }    
+
+            .interbox-2 {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;  
+                
+            }
+
+            .interbox-2 > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: black;
+                border-radius: 50%;
+            }
+
+            #top {
+                transform: translateY(-243px) ;
+                background-color: rgba(143, 76, 252, 0.5)
+
+            }
+
+            .interbox-3 {
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: calc(var(--size)/64);
+                -border: 0.5vh solid;
+                transform: rotate(45deg);
+                
+            }
+
+            .interbox-3 > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: black;
+                border-radius: 50%;
+            
+            }
+   
+            #right {
+                transform: translateX(243px);
+                background-color: rgba(143, 76, 252, 0.5)
+            }
+
+            .interbox-4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 50%;
+                height: 100%; 
+            }
+
+            .interbox-4 > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: red;
+                border-radius: 50%;
+            
+            }
+
+            #bottom {
+                transform: translateY(243px);
+                background-color: rgba(143, 76, 252, 0.5)
+            }
+
+            .interbox-5 {
+                display: flex;
+                justify-content: center;
+                align-items: ;
+                flex-wrap: wrap;
+                flex-direction: column;
+                height: 100%;
+                -margin-left: calc(var(--size)/128);
+
+            }
+
+            .interbox-5 > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: black;
+                border-radius: 50%;
+                
+            }
+
+            #back {
+                transform: translateZ(-243px);
+            }
+            .interbox-6 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100%;
+                width: 40%;
+                
+            }
+
+            .interbox-6 > div {
+                width: calc(var(--size)/32);
+                height: calc(var(--size)/32);
+                background-color: black;
+                border-radius: 50%;
+            }
+        </style>
+    </head> 
+    <body style="margin:0; background-color: lightblue; min-height: var(--size); border: 1vh solid;">
+        
+        <div class="main">
+            <div id="front">
+                <div></div>
+            </div>
+            <div id="left">
+                <div class="interbox-2">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>    
+            <div id="top">
+                <div class="interbox-3">   
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>     
+            </div>
+            <div id="right">
+                <div class="interbox-4" style="padding-left: calc(var(--size)/128);">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="interbox-4" style="padding-right: calc(var(--size)/128);">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div id="bottom">
+                <div class="interbox-5" style="width:calc(var(--size)/16);">
+                    <div></div>
+                    <div style="align-self:flex-end;"></div>
+                    <div></div>
+                </div>
+                <div class="interbox-5">
+                    <div></div>
+                    <div style="background-color:transparent;"></div>
+                    <div></div>
+                </div>
+            </div>
+            <div id="back">
+                <div class="interbox-6">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="interbox-6">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>            
+        </div>
+    </body>   
+
+</html>

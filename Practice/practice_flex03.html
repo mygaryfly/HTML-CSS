@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习Flex:none</title>
+    <style>
+        .main{
+            display: flex;
+            width:700px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: skyblue;
+            box-sizing: border-box;
+            margin: 500px;
+            overflow: hidden;
+        }
+
+        .content{
+            width: 200px;
+            height: 100%;
+            background-color: black;
+            flex: none;
+            margin: 1px;
+            animation: move 7s linear infinite;
+        }
+
+        .text {
+            display: block;
+            font-size:  50px;
+            font-family: "华文中宋";
+            color: cornsilk;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        @keyframes move {
+            0% { transform: translateX(0px);}
+            100% {transform:translateX(-1400px);}
+        }
+
+        
+    </style>
+</head>
+<body style="min-width: 100vw; min-height: 100vw; margin: 0;">
+    <div class="main">
+        <div class="content"><span class="text">1</span></div>
+        <div class="content"><span class="text">2</span></div>
+        <div class="content"><span class="text">3</span></div>
+        <div class="content"><span class="text">4</span></div>
+        <div class="content"><span class="text">5</span></div>
+        <div class="content"><span class="text">6</span></div>
+        <div class="content"><span class="text">7</span></div>
+        <div class="content"><span class="text">1</span></div>
+        <div class="content"><span class="text">2</span></div>
+        <div class="content"><span class="text">3</span></div>
+        <div class="content"><span class="text">4</span></div>
+        <div class="content"><span class="text">5</span></div>
+        <div class="content"><span class="text">6</span></div>
+        <div class="content"><span class="text">7</span></div>
+    </div>
+    
+</body>
+</html>
