@@ -12,13 +12,15 @@
                 flex-direction: column;
                 height: 100vh;
             }
-
+            /* 标题栏*/
             .header {
                 display: flex;
                 position: relative;
                 background-color: pink;
                 height: 15vh;
                 box-sizing: border-box;
+                justify-content: space-between;
+                flex-wrap: wrap;
             }
 
             .main {
@@ -30,7 +32,7 @@
                 height: 15vh;
             }
 
-            .header > div {
+            .hbgm {
                 position: absolute;
                 left: 0;
                 right: 0;
@@ -45,31 +47,135 @@
                 width: 100%;
                 height: inherit;
             }
+            /*标题栏 - 迷你标题栏*/
+            .minHheader {
+                z-index: 1;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 18%;
+                padding: 0.5%;
+            }
 
+            .minHheader  ul{
+                display: flex;
+                align-items: center;
+            }
+
+            .search,.search > input {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                padding-left: 18px;
+            }
+
+            .search > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: gray;
+                width: 20%;
+                height: 100%;
+            }
+            
 
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
         <div class="header">
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili1.png" alt="">
             </div>
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili2.png" alt="">
             </div>
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili3.png" alt="">
             </div>
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili4.png" alt="">
             </div>
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili5.png" alt="">
             </div>
-            <div>
+            <div class =hbgm>
                 <img class="headerbg" src="./img/jili6.png" alt="">
             </div>
+
+            <div class="minHheader">
+                <ul>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">主站</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">番剧</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">游戏中心</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">直播</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">会员购</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">漫画</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">赛事</a>
+                    </li>
+                    <li style="display: flex; align-items: center; flex-direction: column;">        
+                        <a href="" target="_blank" style="display:block; color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">BW</a>
+                        <img src="./img/BW.png" alt="BW" style="max-width: 50%;">
+
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">下载APP</a>
+                    </li>
+                </ul>
+        
+                <ul>
+                    <li class="search">
+                        <input type="text">
+                        <div>
+                            <img src="./img/fdj.png" alt="搜索图标" style="width: 18px; height: 18px;">
+                        </div>
+                    </li>
+                </ul>
+        
+                <ul>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">用户登录</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">大会员</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">消息</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">动态</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">收藏</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">历史</a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">创作中心</a>
+                    </li>
+                    <li style="display: flex; justify-content: center; align-items: center; width: 100px; background-color: #fb7299; height: 100%; border-radius: 2px;">        
+                        <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">投稿</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logo" style="content: url(./img/logo.png); z-index: 1; align-self: flex-start;"></div>
         </div>
+
         <div class="main"></div>
         <div class="footer"></div>
     </body>
