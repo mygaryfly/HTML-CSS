@@ -78,8 +78,78 @@
                 width: 20%;
                 height: 100%;
             }
-            
+            /*迷你标题栏BW轮播*/
+            .BW {
+                display: inline-block;
+                position: relative;
+                width: 60px;
+                height: 30px;
+                overflow: hidden;
+            }
 
+            .BW > div {
+                position: absolute;
+                animation: BW 10s linear infinite;
+                transition: all 1s;
+            }
+
+            .BW P {
+                padding: 7px 0;
+            }
+
+            @keyframes BW {
+                0% {transform: translateY(0);}
+                20% {transform: translateY(0);}
+                40% {transform: translateY(-30px);}
+                60% {transform: translateY(-30px);}
+                80% {transform: translateY(0);}
+                100% {transform: translateY(0);}
+            }
+
+            /*迷你标题栏气泡*/
+            .bubble::before {
+                content: "";
+                display: none;
+                z-index: 1;
+                position: absolute;
+                transform: translate(0.5vw,1vw);
+                width: 0;
+                height: 0;
+                border: 0.4vw solid transparent;
+                border-bottom-color: white;
+                transition: all 1s;
+            }
+            .bubble::after {
+                content: "";
+                display: none;
+                z-index: 1;
+                position: absolute;
+                width: 15vw;
+                height: 10vw;
+                background-color: white;
+                transform: translate(-3vw,0.8vw);
+                box-shadow: 0 0 2px 3px rgba(0,0,0,.1);
+                transition: all 1s;
+            }
+
+            .bubble:hover::before,.bubble:hover::after {
+                display: block;
+            }
+
+            /*内容栏*/
+            .main {
+                align-self: center;
+                width: 60%;
+                border: 1px solid black;
+            }
+
+            .mainLabel {
+                display: flex;
+            }
+            .mainLabel > div {
+                display: inline-flex;
+                border: 1px solid black;
+            }
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -111,25 +181,26 @@
                     <li>
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">番剧</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">游戏中心</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">直播</a>
                     </li>
                     <li>
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">会员购</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">漫画</a>
                     </li>
                     <li>
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">赛事</a>
                     </li>
-                    <li style="display: flex; align-items: center; flex-direction: column;">        
-                        <a href="" target="_blank" style="display:block; color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">BW</a>
-                        <img src="./img/BW.png" alt="BW" style="max-width: 50%;">
-
+                    <li class="BW">
+                        <div>        
+                            <p style="text-align:center;color: white;">BW</p>
+                            <img src="./img/BW.png" alt="BW" style="max-height: 30px;">
+                        </div>
                     </li>
                     <li>
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">下载APP</a>
@@ -146,27 +217,27 @@
                 </ul>
         
                 <ul>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">用户登录</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">大会员</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">消息</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">动态</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">收藏</a>
                     </li>
-                    <li>
+                    <li class="bubble">
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">历史</a>
                     </li>
                     <li>
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">创作中心</a>
-                    </li>
+                    </li>  
                     <li style="display: flex; justify-content: center; align-items: center; width: 100px; background-color: #fb7299; height: 100%; border-radius: 2px;">        
                         <a href="" target="_blank" style="color: white; padding-right: 5px; font: bold 14px; text-decoration: none;">投稿</a>
                     </li>
@@ -176,7 +247,14 @@
             <div class="logo" style="content: url(./img/logo.png); z-index: 1; align-self: flex-start;"></div>
         </div>
 
-        <div class="main"></div>
+        <div class="main">
+            <div class="mainLabel">
+                <div class="mainLabel_left"></div>
+                <div class="mainLabel_middle"></div>
+                <div class="mainLabel_right"></div>
+            </div>
+
+        </div>
         <div class="footer"></div>
     </body>
 </html>
