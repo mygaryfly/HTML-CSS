@@ -109,7 +109,7 @@
             /*迷你标题栏气泡*/
             .bubble::before {
                 content: "";
-                display: none;
+                display: block;
                 z-index: 1;
                 position: absolute;
                 transform: translate(0.5vw,1vw);
@@ -117,38 +117,73 @@
                 height: 0;
                 border: 0.4vw solid transparent;
                 border-bottom-color: white;
+                opacity: 0;
                 transition: all 1s;
             }
             .bubble::after {
                 content: "";
-                display: none;
+                display: block;
                 z-index: 1;
                 position: absolute;
                 width: 15vw;
                 height: 10vw;
                 background-color: white;
-                transform: translate(-3vw,0.8vw);
+                transform: translate(-3vw,0.4vw);
                 box-shadow: 0 0 2px 3px rgba(0,0,0,.1);
+                opacity: 0;
                 transition: all 1s;
             }
 
             .bubble:hover::before,.bubble:hover::after {
-                display: block;
+                opacity: 1;
             }
-
+        </style>
+        <style>
             /*内容栏*/
             .main {
                 align-self: center;
-                width: 60%;
+                width: 70vh;
                 border: 1px solid black;
             }
 
             .mainLabel {
                 display: flex;
             }
-            .mainLabel > div {
+            .mainLabel > ul {
                 display: inline-flex;
                 border: 1px solid black;
+            }
+
+            .mainLabel_left > li {
+                position: relative;
+                width: 4vw;
+                height: 4vw;
+                border: 1px solid black;
+            }
+            
+            .mlctr {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 75%;
+                height: 75%;
+                border-radius: 50%;
+                background: pink
+            }
+
+            .mlb > a {
+                position: absolute;
+                right: 25%;
+                transform: translateY(220%);
+                font: bolder;
+                text-decoration: none;
+                color: black;
+                transition: .5s;
+            }
+
+            .mlb:hover > a {
+                color: #73c9e5;
             }
         </style>
     </head>
@@ -244,14 +279,35 @@
                 </ul>
             </div>
 
-            <div class="logo" style="content: url(./img/logo.png); z-index: 1; align-self: flex-start;"></div>
+            <div class="logo" style="content: url(./img/logo.png); position:absolute;bottom: 1vw; align-self: flex-start;"></div>
         </div>
 
         <div class="main">
             <div class="mainLabel">
-                <div class="mainLabel_left"></div>
-                <div class="mainLabel_middle"></div>
-                <div class="mainLabel_right"></div>
+                <ul class="mainLabel_left" style="flex:1;">
+                    <li class="mlb">
+                        <div class="mlctr" style="background:center/contain url(./img/shouye.jpg)">
+                        </div>
+                        <a href="" target="_blank">首页</a>
+                    </li>
+                    <li class="mlb">
+                        <div class="mlctr" style="background:center/contain url(./img/dongtai.jpeg)">
+                        </div>
+                        <a href="" target="_blank">动态</a>
+                    </li>
+                    <li class="mlb">
+                        <div class="mlctr" style="background:center/contain url(./img/remen.jpeg)">
+                        </div>
+                        <a href="" target="_blank">热门</a>
+                    </li>
+                    <li class="mlb">
+                        <div class="mlctr" style="background:center/contain url(./img/pindao.png)">
+                        </div>
+                        <a href="" target="_blank">频道</a>
+                    </li>
+                </ul>
+                <ul class="mainLabel_middle" style="flex: 3; border-left: 0.5vw solid lightgray; border-right: 0.5vw solid lightgray;" ></ul>
+                <ul class="mainLabel_right" style="flex: 1;"></ul>
             </div>
 
         </div>
