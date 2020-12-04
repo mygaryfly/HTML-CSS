@@ -146,17 +146,14 @@
                 border: 1px solid black;
             }
 
-            .mainLabel {
-                display: flex;
-            }
-            .mainLabel > ul {
+            .mainLabel_left {
                 display: inline-flex;
                 border: 1px solid black;
             }
 
-            .mainLabel_left > li {
+            .mla {
                 position: relative;
-                width: 4vw;
+                width: 100%;
                 height: 4vw;
                 border: 1px solid black;
             }
@@ -172,17 +169,17 @@
                 background: pink
             }
 
-            .mlb > a {
+            .mla > a {
                 position: absolute;
-                right: 25%;
-                transform: translateY(220%);
+                right: 2vh;
+                bottom: 0;
                 font: bolder;
                 text-decoration: none;
                 color: black;
                 transition: .5s;
             }
 
-            .mlb:hover > a {
+            .mla:hover > a {
                 color: #73c9e5;
             }
         </style>
@@ -283,24 +280,24 @@
         </div>
 
         <div class="main">
-            <div class="mainLabel">
+            <div class="mainLabel" style="display: flex;">
                 <ul class="mainLabel_left" style="flex:1;">
-                    <li class="mlb">
+                    <li class="mla">
                         <div class="mlctr" style="background:center/contain url(./img/shouye.jpg)">
                         </div>
                         <a href="" target="_blank">首页</a>
                     </li>
-                    <li class="mlb">
+                    <li class="mla">
                         <div class="mlctr" style="background:center/contain url(./img/dongtai.jpeg)">
                         </div>
                         <a href="" target="_blank">动态</a>
                     </li>
-                    <li class="mlb">
+                    <li class="mla">
                         <div class="mlctr" style="background:center/contain url(./img/remen.jpeg)">
                         </div>
                         <a href="" target="_blank">热门</a>
                     </li>
-                    <li class="mlb">
+                    <li class="mla">
                         <div class="mlctr" style="background:center/contain url(./img/pindao.png)">
                         </div>
                         <a href="" target="_blank">频道</a>
