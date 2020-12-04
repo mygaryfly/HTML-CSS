@@ -68,6 +68,7 @@
                 height: 100%;
                 box-sizing: border-box;
                 padding-left: 18px;
+                outline: none;
             }
 
             .search > div {
@@ -112,13 +113,14 @@
                 display: block;
                 z-index: 1;
                 position: absolute;
-                transform: translate(0.5vw,1vw);
+                transform: translate(0.1vw,1vh);
                 width: 0;
                 height: 0;
                 border: 0.4vw solid transparent;
                 border-bottom-color: white;
+                box-sizing: border-box;
                 opacity: 0;
-                transition: all 1s;
+                transition: all .5s;
             }
             .bubble::after {
                 content: "";
@@ -126,16 +128,20 @@
                 z-index: 1;
                 position: absolute;
                 width: 15vw;
-                height: 10vw;
                 background-color: white;
-                transform: translate(-3vw,0.4vw);
+                transform: translate(-3vw,0.8vh);
+                box-sizing: border-box;
                 box-shadow: 0 0 2px 3px rgba(0,0,0,.1);
                 opacity: 0;
-                transition: all 1s;
+                transition: all .5s;
             }
 
-            .bubble:hover::before,.bubble:hover::after {
+            .bubble:hover:before,.bubble:hover:after {
                 opacity: 1;
+            }
+
+            .bubble:hover:after {
+                height: 10vw;
             }
         </style>
         <style>
@@ -145,17 +151,17 @@
                 width: 70%;
                 border: 1px solid black;
             }
-
+            /*内容栏-左侧*/
             .mainLabel_left {
                 display: inline-flex;
-                border: 1px solid black;
+                justify-content: center;
+                
             }
 
             .mla {
                 position: relative;
-                width: 100%;
-                height: 4vw;
-                border: 1px solid black;
+                width: 3vw;
+                height: 3vw;
             }
             
             .mlctr {
@@ -166,12 +172,13 @@
                 width: 75%;
                 height: 75%;
                 border-radius: 50%;
-                background: pink
+                
             }
 
             .mla > a {
                 position: absolute;
-                right: 2vh;
+                left: 50%;
+                transform: translateX(-50%);
                 bottom: 0;
                 font: bolder;
                 text-decoration: none;
@@ -182,6 +189,9 @@
             .mla:hover > a {
                 color: #73c9e5;
             }
+
+            /*内容栏-中间*/
+
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -280,7 +290,7 @@
         </div>
 
         <div class="main">
-            <div class="mainLabel" style="display: flex;">
+            <div class="mainLabel" style="display: flex;align-items: center;">
                 <ul class="mainLabel_left" style="flex:1;">
                     <li class="mla">
                         <div class="mlctr" style="background:center/contain url(./img/shouye.jpg)">
@@ -303,7 +313,25 @@
                         <a href="" target="_blank">频道</a>
                     </li>
                 </ul>
-                <ul class="mainLabel_middle" style="flex: 3; border-left: 0.5vw solid lightgray; border-right: 0.5vw solid lightgray;" ></ul>
+                <ul class="mainLabel_middle" style="display:flex;justify-content:space-evenly;flex-wrap:wrap;flex: 3; height: 3.5vh;border-left: 1px solid lightgray; border-right: 1px solid lightgray;" >
+                    <li style="width: 5vw;"><span>动画</span></li>
+                    <li style="width: 5vw;"><span>音乐</span></li>
+                    <li style="width: 5vw;"><span>舞蹈</span></li>
+                    <li style="width: 5vw;"><span>知识</span></li>
+                    <li style="width: 5vw;"><span>生活</span></li>
+                    <li style="width: 5vw;"><span>时尚</span></li>
+                    <li style="width: 5vw;"><span>娱乐</span></li>
+                    <li style="width: 5vw;"><span>放映厅</span></li>
+                    <li style="width: 5vw;"><span>番剧</span></li>
+                    <li style="width: 5vw;"><span>国创</span></li>
+                    <li style="width: 5vw;"><span>游戏</span></li>
+                    <li style="width: 5vw;"><span>数码</span></li>
+                    <li style="width: 5vw;"><span>鬼畜</span></li>
+                    <li style="width: 5vw;"><span>资讯</span></li>
+                    <li style="width: 5vw;"><span>影视</span></li>
+                    <li style="width: 5vw;"><span>更多∨</span></li>
+
+                </ul>
                 <ul class="mainLabel_right" style="flex: 1;"></ul>
             </div>
 
