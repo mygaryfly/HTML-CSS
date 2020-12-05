@@ -145,13 +145,13 @@
             }
         </style>
         <style>
-            /*内容栏*/
+            /*内标签栏*/
             .main {
                 align-self: center;
                 width: 70%;
                 border: 1px solid black;
             }
-            /*内容栏-左侧*/
+            /*内标签栏-左侧*/
             .mainLabel_left {
                 display: inline-flex;
                 justify-content: center;
@@ -190,8 +190,111 @@
                 color: #73c9e5;
             }
 
-            /*内容栏-中间*/
+            /*内标签栏-中间*/
 
+            .centerText {
+                position: relative;
+                display: inline-flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .cTbubble {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                width: 5vw;
+                height: 5vw;
+                background-color: white;
+                top: -5.3vw;
+                margin: 0;
+                border-radius: 2px;
+                box-shadow: 0 2px 1px rgba(0,0,0,.1);
+                opacity: 0;
+                transition: 1s;
+            }
+            .cTbubble::before{
+                position: absolute;
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border: 0.3vw solid transparent;
+                border-top: 0.3vw solid white;
+                top:5vw;
+            }
+
+            .centerText:hover > span{
+                color: #73c9e5;
+            }
+
+            .centerText:hover > .cTbubble {
+                opacity: 1;
+            }
+
+            .cDbubble {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                width: 5vw;
+                height: 5vw;
+                background-color: white;
+                bottom: -5.3vw;
+                margin: 0;
+                border-radius: 2px;
+                box-shadow: 0 -2px 1px rgba(0,0,0,.1);
+                opacity: 0;
+                transition: 1s;
+            }
+
+            .cDbubble::before{
+                position: absolute;
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border: 0.3vw solid transparent;
+                border-bottom: 0.3vw solid white;
+                bottom:5vw;
+            }
+
+            .centerText:hover > .cDbubble {
+                opacity: 1;
+            }
+            .Count {
+                min-width: 2vw;
+                height: 1vh;
+                background-color: #73c9e5;
+                border-radius: 2px;
+                color: white;
+            }
+
+            /*内标签栏-右侧*/
+            .rightText > a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .rightText:hover > a {
+                color: #73c9e5;
+            }
+
+            /*推荐栏*/
+            .recommend {
+                display: grid;
+                width: 100%;
+                height: 20%; 
+                background-color: cornflowerblue;
+                grid-template-rows: repeat(2,1fr);
+                grid-template-columns: repeat(5,1fr);
+                gap: 0.5vw 0.5vw;
+            }
+
+            .recommend > div {
+                border: 1px solid black;
+            }
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -313,27 +416,45 @@
                         <a href="" target="_blank">频道</a>
                     </li>
                 </ul>
-                <ul class="mainLabel_middle" style="display:flex;justify-content:space-evenly;flex-wrap:wrap;flex: 3; height: 3.5vh;border-left: 1px solid lightgray; border-right: 1px solid lightgray;" >
-                    <li style="width: 5vw;"><span>动画</span></li>
-                    <li style="width: 5vw;"><span>音乐</span></li>
-                    <li style="width: 5vw;"><span>舞蹈</span></li>
-                    <li style="width: 5vw;"><span>知识</span></li>
-                    <li style="width: 5vw;"><span>生活</span></li>
-                    <li style="width: 5vw;"><span>时尚</span></li>
-                    <li style="width: 5vw;"><span>娱乐</span></li>
-                    <li style="width: 5vw;"><span>放映厅</span></li>
-                    <li style="width: 5vw;"><span>番剧</span></li>
-                    <li style="width: 5vw;"><span>国创</span></li>
-                    <li style="width: 5vw;"><span>游戏</span></li>
-                    <li style="width: 5vw;"><span>数码</span></li>
-                    <li style="width: 5vw;"><span>鬼畜</span></li>
-                    <li style="width: 5vw;"><span>资讯</span></li>
-                    <li style="width: 5vw;"><span>影视</span></li>
-                    <li style="width: 5vw;"><span>更多∨</span></li>
+                <ul class="mainLabel_middle" style="display:flex;justify-content:space-between;flex-wrap:wrap;flex: 3; height: 3.5vh;border-left: 1px solid lightgray; border-right: 1px solid lightgray;" >
+                    <li class="centerText" style="width: 5vw;"><span>动画</span><div class="Count"></div><div class="cTbubble">1</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>音乐</span><div class="Count"></div><div class="cTbubble">2</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>舞蹈</span><div class="Count"></div><div class="cTbubble">3</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>知识</span><div class="Count"></div><div class="cTbubble">4</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>生活</span><div class="Count"></div><div class="cTbubble">5</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>时尚</span><div class="Count"></div><div class="cTbubble">6</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>娱乐</span><div class="Count"></div><div class="cTbubble">7</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>放映厅</span><div class="Count"></div><div class="cTbubble">8</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>番剧</span><div class="Count"></div><div class="cDbubble">9</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>国创</span><div class="Count"></div><div class="cDbubble">10</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>游戏</span><div class="Count"></div><div class="cDbubble">11</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>数码</span><div class="Count"></div><div class="cDbubble">12</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>鬼畜</span><div class="Count"></div><div class="cDbubble">13</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>资讯</span><div class="Count"></div><div class="cDbubble">14</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>影视</span><div class="Count"></div><div class="cDbubble">15</div></li>
+                    <li class="centerText" style="width: 5vw;"><span>更多∨</span><div class="Count"></div><div class="cDbubble">16</div></li>
 
                 </ul>
-                <ul class="mainLabel_right" style="flex: 1;"></ul>
+                <ul class="mainLabel_right" style="display:flex;flex-wrap:wrap;justify-content:space-around;flex: 1;">
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/t1.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a href="" target="_blank">专栏</a></li>
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/t2.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a href="" target="_blank">活动</a></li>
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/t3.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a href="" target="_blank">小黑屋<a></li>
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/d1.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a href="" target="_blank">直播</a></li>
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/d2.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a href="" target="_blank">课堂</a></li>
+                    <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/d3.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a style="display:flex;flex-wrap: nowrap;"href="" target="_blank">音乐Plus</a></li>
+                </ul>
             </div>
+
+            <div class="recommend">
+                <div style="grid-row-start: 1;grid-row-end: 3; grid-column-start: 1;grid-column-end: 3;"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
 
         </div>
         <div class="footer"></div>
