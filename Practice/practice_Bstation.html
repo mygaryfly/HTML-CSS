@@ -25,6 +25,9 @@
 
             .main {
                 flex: 1;
+                align-self: center;
+                width: 70%;
+                border: 1px solid black;
             }
 
             .footer {
@@ -145,12 +148,6 @@
             }
         </style>
         <style>
-            /*内标签栏*/
-            .main {
-                align-self: center;
-                width: 70%;
-                border: 1px solid black;
-            }
             /*内标签栏-左侧*/
             .mainLabel_left {
                 display: inline-flex;
@@ -285,7 +282,7 @@
             .recommend {
                 display: grid;
                 width: 100%;
-                height: 20%; 
+                height: 25vh; 
                 background-color: cornflowerblue;
                 grid-template-rows: repeat(2,1fr);
                 grid-template-columns: repeat(5,1fr);
@@ -294,6 +291,111 @@
 
             .recommend > div {
                 border: 1px solid black;
+            }
+
+            /*推荐栏-主位-轮播*/
+            .recommend {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .slider {
+                display: flex;
+                overflow: hidden;
+            }
+            .slider > input {
+                display: none;
+            }
+
+            .slider > label {
+                position: absolute;
+                bottom: 1vw;
+                width: 0.5vw;
+                height: 0.5vw;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                background-color: #fff;    
+            }    
+            
+            label[for="btn1"] {
+                left: 5%;
+            }
+            label[for="btn2"] {
+                left: 7%;
+            }
+            label[for="btn3"] {
+                left: 9%;
+            }
+            label[for="btn4"] {
+                left: 11%;
+            }
+            label[for="btn5"] {
+                left: 13%;
+            }
+            label[for="btn6"] {
+                left: 15%;
+            }
+            label[for="btn7"] {
+                left: 17%;
+            }
+
+            
+            .slider > ul {
+                display: flex;
+                list-style: none;
+                align-self: flex-start;
+                width: calc(27vw*7);    
+                transition: all .5s;
+            }
+
+            .slider img {
+                width: 28vw;
+                height:25vh;
+            }
+            #btn1:checked ~ ul {
+                margin-left: 0;
+            }
+            #btn2:checked ~ ul {
+                margin-left: -28vw;
+            }
+            #btn3:checked ~ ul {
+                margin-left: calc(-28vw*2);
+            }
+            #btn4:checked ~ ul {
+                margin-left: calc(-28vw*3);
+            }
+            #btn5:checked ~ ul {
+                margin-left: calc(-28vw*4);
+            }
+            #btn6:checked ~ ul {
+                margin-left: calc(-28vw*5);
+            }
+            #btn7:checked ~ ul {
+                margin-left: calc(-28vw*6);
+            }
+            
+            #btn1:checked ~ label[for="btn1"]{
+                background-color: lightslategray;
+            }
+            #btn2:checked ~ label[for="btn2"]{
+                background-color: lightslategray;
+            }
+            #btn3:checked ~ label[for="btn3"]{
+                background-color: lightslategray;
+            }
+            #btn4:checked ~ label[for="btn4"]{
+                background-color: lightslategray;
+            }
+            #btn5:checked ~ label[for="btn5"]{
+                background-color: lightslategray;
+            }
+            #btn6:checked ~ label[for="btn6"]{
+                background-color: lightslategray;
+            }
+            #btn7:checked ~ label[for="btn7"]{
+                background-color: lightslategray;
             }
         </style>
     </head>
@@ -446,13 +548,34 @@
             </div>
 
             <div class="recommend">
-                <div style="grid-row-start: 1;grid-row-end: 3; grid-column-start: 1;grid-column-end: 3;"></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div style="grid-row-start: 1;grid-row-end: 3; grid-column-start: 1;grid-column-end: 3;">
+                    <div class="slider">
+                        <input type="radio" name="btn" id="btn1">
+                        <input type="radio" name="btn" id="btn2">
+                        <input type="radio" name="btn" id="btn3">
+                        <input type="radio" name="btn" id="btn4">
+                        <input type="radio" name="btn" id="btn5">
+                        <input type="radio" name="btn" id="btn6">
+                        <input type="radio" name="btn" id="btn7">
+                        <label for="btn1"></label>
+                        <label for="btn2"></label>
+                        <label for="btn3"></label>
+                        <label for="btn4"></label>
+                        <label for="btn5"></label>
+                        <label for="btn6"></label>
+                        <label for="btn7"></label>
+                        <ul>
+                            <li><img src="./img/slide1.jpg" alt=""></li>
+                            <li><img src="./img/slide2.jpg" alt=""></li>
+                            <li><img src="./img/slide3.jpg" alt=""></li>
+                            <li><img src="./img/slide4.jpg" alt=""></li>
+                            <li><img src="./img/slide5.jpg" alt=""></li>
+                            <li><img src="./img/slide6.jpg" alt=""></li>
+                            <li><img src="./img/slide7.jpg" alt=""></li>
+                        </ul>
+                    </div>    
+                </div>
+
             </div>
 
 
