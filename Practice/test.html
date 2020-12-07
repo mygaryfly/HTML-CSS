@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+
+        }
+
+        img::after {
+            content: attr(alt);
+            position: absolute;bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            transform: translateY(100%);
+            
+            
+        }
+
+        div > a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./img/fire.jpg" alt="小怪兽喷火啦">
+    </div>
+</body>
+</html>
