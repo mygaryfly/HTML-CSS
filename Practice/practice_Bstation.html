@@ -346,7 +346,7 @@
                 display: flex;
                 list-style: none;
                 align-self: flex-start;
-                width: calc(27vw*7);    
+                width: calc(28vw*7);    
                 transition: all .5s;
             }
 
@@ -397,6 +397,17 @@
             #btn7:checked ~ label[for="btn7"]{
                 background-color: lightslategray;
             }
+            /*推荐栏-展示区*/
+            .show {
+                display: flex;
+                background-color:red;
+                
+            }
+
+            .show > img {
+                width: 14vw;
+                height: 12.5vh;
+            }
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -446,7 +457,7 @@
                     <li class="BW">
                         <div>        
                             <p style="text-align:center;color: white;">BW</p>
-                            <img src="./img/BW.png" alt="BW" style="max-height: 30px;">
+                            <img src="./img/BW.png" alt="BW" style="height: 30px;">
                         </div>
                     </li>
                     <li>
@@ -573,9 +584,14 @@
                             <li><img src="./img/slide6.jpg" alt=""></li>
                             <li><img src="./img/slide7.jpg" alt=""></li>
                         </ul>
-                    </div>    
+                    </div>  
                 </div>
-
+                <div class="show"><img src="./img/show1.jpg" alt=""></div>
+                <div class="show"><img src="./img/show2.jpg" alt=""></div>
+                <div class="show"><img src="./img/show3.jpg" alt=""></div>
+                <div class="show"><img src="./img/show4.jpg" alt=""></div>
+                <div class="show"><img src="./img/show5.jpg" alt=""></div>
+                <div class="show"><img src="./img/show6.jpg" alt=""></div>
             </div>
 
 
