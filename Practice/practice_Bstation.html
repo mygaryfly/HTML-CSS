@@ -10,7 +10,7 @@
         <style>
             body {
                 flex-direction: column;
-                height: 100vh;
+                -height: 100vh;
             }
             /* 标题栏*/
             .header {
@@ -28,6 +28,7 @@
                 align-self: center;
                 width: 70%;
                 border: 1px solid black;
+
             }
 
             .footer {
@@ -101,8 +102,7 @@
                 padding: 7px 0;
             }
 
-            @keyframes BW {
-                0% {transform: translateY(0);}
+                 0% {transform: translateY(0);}
                 20% {transform: translateY(0);}
                 40% {transform: translateY(-30px);}
                 60% {transform: translateY(-30px);}
@@ -408,14 +408,8 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                height: 22vh;
-                border: 1px solid black;
+                height: 18vh;
                 margin: 1vh 0;
-            }
-
-            .spread > div {
-                
-                border: 1px solid black;
             }
 
             .spreadHeader {
@@ -430,14 +424,130 @@
                 align-items: center;
             }
 
-            #fire::after {
-                content: attr(alt);
-                display: block;
-                background-color: blue;
-                z-index: 1;
-            }
             .spreadFooter {
                 flex: 7;
+            }
+
+            .sphTitle > a {
+                text-decoration: none;
+                transition: .3s;
+            }
+
+            .sphTitle:hover > a {
+                color: #73c9e5;
+            }
+
+            #onlineList {
+                display: flex;
+                justify-content: center;
+                border: 1px solid #e7e7e7;
+                border-radius: 2px;
+                background-color: #f4f4f4;
+                outline: none;
+                cursor: pointer;
+                width: 12vw;
+                height: 30px;
+                transition: .3s;
+            }
+
+            #onlineList:hover {
+                color:  #73c9e5;
+            }
+
+            .spreadFooter {
+                display: grid;
+                grid-template-columns: repeat(7,1fr);
+                gap: 0.5vw;
+            }
+
+            .spreadFooter > div {
+                display: block;
+            }
+
+            .spreadFooter img {
+                width: 100%;
+                height: 116px;
+            }
+
+            .ad {
+                display: inline-block;
+                border: 1px solid #b2b2b2;
+                color: #b2b2b2;
+                border-radius: 2px;
+                background-color:white;
+            }
+
+            /*长广告*/
+            #longAd {
+                width: 100%;
+                height: auto;
+                margin-bottom: 2vh;
+            }
+            
+            #longAd * {
+                width: 100%;
+            }
+
+            /*直播区*/
+
+            .vcr {
+                display: flex;
+                width: 100%;
+                height: 15vw;
+                background-color: tomato;
+            }
+
+            .vcr div {
+                border: 1px solid black;
+            }
+
+            /*直播区左侧*/
+            .vcrLeft {
+                flex: 4;
+                background-color: blue;
+            
+
+            }
+
+            .vcrLeft > :first-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 3vh;
+                background-color: cornflowerblue;
+            }
+            /*直播区右侧*/
+            .vcrRight {
+                flex: 2;
+                
+            }
+
+            #vcrLeftBtn1 {
+                display: inherit;align-items: center;margin-right: 7px;
+                color: #505050;
+                border: 1px solid silver;
+                border-radius: 2px;
+            }
+            #vcrLeftBtn1:hover {
+                color: #73c9e5;
+                transition: .3s;
+            }
+
+            #vcrLeftBtn1:hover > img {
+                transform: rotate(360deg);
+                transition: .3s;
+            }
+
+            #vcrLeftBtn2 {
+                color: #505050;
+                border: 1px solid silver;
+                border-radius: 2px;
+            }
+
+            #vcrLeftBtn2:hover {
+                color: #73c9e5;
+                transition: .3s;
             }
         </style>
     </head>
@@ -630,30 +740,89 @@
                     <div>
                         <img src="./img/horn.jpg" alt="" style="height: 40px;">
                         <span style="font-size: 20px; margin-right: 20px;">推广</span>
-                        <img id="fire" src="./img/fire.jpg" alt="这些名场面你有印象吗?" style="width: 16px;">
+                        <div class="sphTitle">
+                            <img id="fire" src="./img/fire.jpg" alt="" style="width: 16px;">
+                            <a href="" target="_blank">这些名场面你有印象吗?</a>
+                        </div>
+                        <div class="sphTitle">
+                            <img id="fire" src="./img/fire.jpg" alt="" style="width: 16px;">
+                            <a href="" target="_blank">2020全年动画人气排行</a>
+                        </div>
                     </div>
-                    <input type="button" value="在线列表">
+                    <a href="" id="onlineList">在线列表</a>
                 </div>
 
                 <div class="spreadFooter">
                     <div>
-                        <p></p>
+                        <img src="./img/sp1.jpg" alt="">
+                        <div class="ad">广告</div>
+                        <span>每天学影视半小时，挑战兴趣养活自己</span>
                     </div>
                     <div>
-                        <p></p>
+                        <img src="./img/sp2.jpg" alt="">
+                        <span>没有什么事情比每天变强一点更好了！！</span>
                     </div>
                     <div>
-                        <p></p>
+                        <img src="./img/sp3.webp" alt="">
+                        <div class="ad">广告</div>
+                        <span>绽放吧，烂漫天空中的诗歌，北风之舞</span>
                     </div>
                     <div>
-                        <p></p>
+                        <img src="./img/sp4.webp" alt="">
+                        <span>没有什么事情比每天变强一点更好了！！</span>
                     </div>
                     <div>
-                        <p></p>
+                        <img src="./img/sp5.webp" alt="">
+                        <span>没有什么事情比每天变强一点更好了！！</span>
+                    </div>
+                    <div>
+                        <img src="./img/sp6.webp" alt="">
+                        <div class="ad">广告</div>
+                        <span>初音小妹妹最喜欢吃大碗宽面啦啦啦！！！</span>
+                    </div>
+                    <div>
+                        <img src="./img/sp7.webp" alt="">
+                        <span>没有什么事情比每天变强一点更好了！！</span>
                     </div>
                 </div>
             </div>
 
+            <div id="longAd">
+                <a  href="" target="_blank" >
+                    <img src="./img/longad.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="vcr">
+                <div class="vcrLeft">
+                    <div>
+                        <div style="display: inherit;align-items: center;">
+                            <img src="./img/vcr.jpg" alt="" style="height: 3vh;">
+                            <span style="font-size: 1.5em;padding: 0 1em;">正在直播</span>
+                            <span style="font-size: 10px;">当前共有88888个在线直播</span>
+                        </div>
+                        <div style="display: inherit;align-items: center;">
+                            <a id="vcrLeftBtn1" href="">
+                                <img src="./img/roll.jpg" alt="" style="height: 15px; margin-right: 3.5px;">
+                                换一换
+                            </a>
+                            <a id="vcrLeftBtn2" href="">更多 ></a>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="vcrRight">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
         </div>
         <div class="footer"></div>
     </body>
