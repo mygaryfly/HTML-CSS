@@ -102,6 +102,7 @@
                 padding: 7px 0;
             }
 
+            @keyframes BW {
                  0% {transform: translateY(0);}
                 20% {transform: translateY(0);}
                 40% {transform: translateY(-30px);}
@@ -499,19 +500,13 @@
             .vcr {
                 display: flex;
                 width: 100%;
-                height: 15vw;
-                background-color: tomato;
+                height: 20vw;
             }
 
-            .vcr div {
-                border: 1px solid black;
-            }
 
-            /*直播区左侧*/
+            /*直播区左侧-A*/
             .vcrLeft {
-                flex: 4;
-                background-color: blue;
-            
+                flex: 1;
 
             }
 
@@ -520,14 +515,9 @@
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                height: 3vh;
-                background-color: cornflowerblue;
+                height: 2vw;
             }
-            /*直播区右侧*/
-            .vcrRight {
-                flex: 2;
-                
-            }
+
 
             #vcrLeftBtn1 {
                 display: inherit;align-items: center;margin-right: 7px;
@@ -555,6 +545,132 @@
                 color: #73c9e5;
                 transition: .3s;
             }
+            /*直播区左侧-B*/
+            #vcrLeftB {
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                grid-template-rows: repeat(2,1fr);
+                gap: 0.2vw;
+                height: 18vw;
+            }
+
+            #vcrLeftB  img {
+                width: 100%;
+            }
+
+            .txt {
+                display: flex;
+            }
+            .tx {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            .tx + div {
+                flex: 1;
+
+            }
+
+            .tx + div > span:hover {
+                cursor: pointer;
+                color: #73c9e5;
+                transition: .3s;
+            }
+
+            .tx + div > p {
+                color: lightgrey;
+            }
+            
+            /*直播区右侧*/
+            .vcrRight {
+                width: 400px;
+                
+            }
+            
+            .vcrRight > div:first-child {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 2vw;
+            }
+
+            .vcrRight a {
+                padding-right: 5px;
+            }
+            /*直播区右侧-轮播*/
+
+            .vcrRight {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .rightSlider {
+                display: flex;
+                overflow: hidden;
+            }
+            .rightSlider > input {
+                display: none;
+            }
+
+            .rightSlider > label {
+                position: absolute;
+                bottom: 2.5vw;
+                width: 0.5vw;
+                height: 0.5vw;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                background-color: #fff;    
+            }    
+            
+            label[for="rbtn1"] {
+                left: 10%;
+            }
+            label[for="rbtn2"] {
+                left: 20%;
+            }
+            label[for="rbtn3"] {
+                left: 30%;
+            }
+
+            
+            .rightSlider > ul {
+                display: flex;
+                list-style: none;
+                align-self: flex-start;
+                width: calc(400px*3);    
+                transition: all .5s;
+            }
+
+            .rightSlider img {
+                width: 400px;
+                height:25vh;
+            }
+            #rbtn1:checked ~ ul {
+                margin-left: 0;
+            }
+            #rbtn2:checked ~ ul {
+                margin-left: -400px;
+            }
+            #rbtn3:checked ~ ul {
+                margin-left: calc(-400px*2);
+            }
+            
+            #rbtn1:checked ~ label[for="rbtn1"]{
+                background-color: lightslategray;
+            }
+            #rbtn2:checked ~ label[for="rbtn2"]{
+                background-color: lightslategray;
+            }
+            #rbtn3:checked ~ label[for="rbtn3"]{
+                background-color: lightslategray;
+            }
+
+                       
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -815,21 +931,154 @@
                             <a id="vcrLeftBtn2" href="">更多 ></a>
                         </div>
                     </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+
+                    <div id="vcrLeftB">
+                        <div>
+                            <img src="./img/vl1.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft1.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl2.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft2.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl3.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft3.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl4.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft4.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl5.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft5.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl6.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft6.gif);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl7.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft7.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl8.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft8.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl9.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft9.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl10.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft10.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl11.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft11.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                        <div>
+                            <img src="./img/vl12.webp" alt="" class="leftBpic">
+                            <div class="txt">
+                                <div class="tx" style="background: center/contain url(./img/ft12.jpg);"></div>
+                                <div style="display: inline-block;">
+                                    <span>妖精的尾巴，吃下去力量就涌现出来了！</span>
+                                    <p>--Fighting!!!</p>
+                                </div>    
+                            </div>    
+                        </div>
+                    </div>
                 </div>
                 <div class="vcrRight">
-                    <div></div>
-                    <div></div>
+                    <div>
+                        <a href="">直播排行</a>
+                        <a href="">关注的主播</a>
+                        <a href="" style="color: #73c9e5;padding:0;box-sizing:border-box;border:1px solid transparent;border-bottom-color: #73c9e5;">为你推荐</a>
+                    </div>
+                    <div class="rightSlider">
+                        <input type="radio" name="rbtn" id="rbtn1">
+                        <input type="radio" name="rbtn" id="rbtn2">
+                        <input type="radio" name="rbtn" id="rbtn3">
+                        <label for="rbtn1"></label>
+                        <label for="rbtn2"></label>
+                        <label for="rbtn3"></label>
+                        <ul>
+                            <li><img src="./img/rslider1.jpg" alt=""></li>
+                            <li><img src="./img/rslider2.jpg" alt=""></li>
+                            <li><img src="./img/rslider3.jpg" alt=""></li>
+                        </ul>    
+                    </div>
                 </div>
             </div>
+            
         </div>
+        
         <div class="footer"></div>
     </body>
 </html>
