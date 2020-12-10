@@ -10,13 +10,13 @@
         <style>
             body {
                 flex-direction: column;
-                -height: 100vh;
+                overflow-x:hidden;
+                overflow-y:auto;
             }
             /* 标题栏*/
             .header {
                 display: flex;
                 position: relative;
-                background-color: pink;
                 height: 15vh;
                 box-sizing: border-box;
                 justify-content: space-between;
@@ -27,13 +27,12 @@
                 flex: 1;
                 align-self: center;
                 width: 70%;
-                border: 1px solid black;
 
             }
 
             .footer {
-                background-color: gray;
-                height: 15vh;
+                background-color:#f6f9fa;
+                height: 30vh;
             }
 
             .hbgm {
@@ -585,7 +584,7 @@
             
             /*直播区右侧*/
             .vcrRight {
-                width: 400px;
+                width: 20vw;
                 
             }
             
@@ -619,7 +618,7 @@
 
             .rightSlider > label {
                 position: absolute;
-                bottom: 2.5vw;
+                top: 340px;
                 width: 0.5vw;
                 height: 0.5vw;
                 border: 3px solid #fff;
@@ -642,22 +641,22 @@
                 display: flex;
                 list-style: none;
                 align-self: flex-start;
-                width: calc(400px*3);    
+                width: calc(20vw*3);    
                 transition: all .5s;
             }
 
             .rightSlider img {
-                width: 400px;
+                width: 20vw;
                 height:25vh;
             }
             #rbtn1:checked ~ ul {
                 margin-left: 0;
             }
             #rbtn2:checked ~ ul {
-                margin-left: -400px;
+                margin-left: -20vw;
             }
             #rbtn3:checked ~ ul {
-                margin-left: calc(-400px*2);
+                margin-left: calc(-20vw*2);
             }
             
             #rbtn1:checked ~ label[for="rbtn1"]{
@@ -668,9 +667,152 @@
             }
             #rbtn3:checked ~ label[for="rbtn3"]{
                 background-color: lightslategray;
+            }      
+        </style>
+        <style>
+            /*页脚*/
+            .footer {
+                position: relative;
             }
 
-                       
+            #footerContent {
+                display: grid;
+                grid-template-rows: repeat(2,1fr);
+                position: absolute;
+                width: 70%;
+                height: 100%;
+                left: 0; right: 0; margin: auto;
+                box-sizing: border-box;
+            }
+
+            /*页脚-上部*/
+            #footerTop {
+                display: flex;
+                width: auto;
+                box-sizing: border-box;
+            }
+
+            #footerTop > div {
+                height: 90%;
+                margin: auto;
+                box-sizing: border-box;
+            }
+
+            #footerTop > div:first-child {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                padding-right: 3vw;
+                flex: 2;
+            }
+
+            #ftitle1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                font-family: "simsun";
+                font-size: 16px;
+                color: #999;
+            }
+            #footerTop a:hover {
+                color: #73c9e5;
+                transition: .3s;
+            }
+            #footerTop > div:nth-child(2) {
+                border-left:1px solid #eee;
+                border-right:1px solid #eee;
+            }
+
+            #footerTop > div:nth-child(2) {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                flex: 3;
+                width: 40%;
+                padding-right: 3vw;
+
+
+            }
+            
+            #ftitle2 {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                font-size: 16px;
+                color: #999;
+                box-sizing: border-box;
+                font-family: "simsun";
+            }
+
+            #footerTop > div:nth-child(3) {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex: 2;
+            }
+            #footerTop > div:nth-child(3) img {
+                width: 60px;
+                height: 60px;
+
+            }
+
+            #footerTop > div:nth-child(3) > div {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            
+            }
+
+            #footerTop > div:nth-child(3) a::before {
+                content:"";
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 8px;
+                margin: auto;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+            }
+
+            #ftp1::before {
+                background: center / contain url(./img/ftp1.png);
+            }
+
+            #ftp2::before {
+                background: center / contain url(./img/ftp2.png);
+            }
+
+            #ftp3::before {
+                background: center / contain url(./img/ftp3.png);
+            }
+
+            /*页脚-下部*/
+            #footerBottom {
+                display: flex;
+                box-sizing: border-box;
+            }
+            #footerBottom > div {
+                box-sizing: border-box;
+            }
+            
+
+            #fbLeft {
+                display: flex;
+                flex-direction: column;
+                flex:1
+
+            }
+
+
+            #fbLeft img {
+                width:100px;
+            }
+
+            #fbRight {
+                
+                flex: 9;
+            }
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -1077,8 +1219,70 @@
                 </div>
             </div>
             
+            
         </div>
         
-        <div class="footer"></div>
+        <div class="footer">
+            <div id="footerContent">
+                <div id="footerTop">
+                    <div>
+                        <div id="ftitle1">giligili</div>
+                        <a href="">关于我们</a>
+                        <a href="">友情链接</a>
+                        <a href="">联系我们</a>
+                        <a href="">隐私政策</a>
+                        <a href="">用户协议</a>
+                        <a href="">giligili认证</a>
+                        <a href="">加入我们</a>
+                        <a href="">Investor Rleations</a>
+                    </div>
+                    <div>
+                        <div id="ftitle2">传送门</div>
+                        <a href="">协议汇总</a>
+                        <a href="">帮助中心</a>
+                        <a href="">名人堂</a>
+                        <a href="">活动中心</a>
+                        <a href="">用户反馈论坛</a>
+                        <a href="">MCN管理中心</a>
+                        <a href="">活动专题页</a>
+                        <a href="">壁纸站</a>
+                        <a href="">高级弹幕</a>
+                        <a href="">侵权申诉</a>
+                        <a href="">广告合作</a>
+                        <a href="">企业号官网</a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="" id="ftp1">下载</a>
+                        </div>
+                        <div>
+                        <a href="" id="ftp2">微博</a>
+                        </div>
+                        <div>
+                        <a href="" id="ftp3">微信</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footerBottom">
+                    <div id="fbLeft">
+                        <div><img src="./img/fb1.png" alt=""></div>
+                        <div><img src="./img/fb2.png" alt=""></div>
+                        <div>
+                            <img src="./img/fb3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div id="fbRight">
+                        <p><span>营业执照</span><span>信息网络传播视听节目许可证：000000</span><span>网络文化经营许可证 沪网文【0000】3804-274号</span></p>
+                        <p><span>出版物经营许可证 沪批字第0000 号</span>互联网药品信息服务资格证 沪-非经营性-0000-0143<span></span></p>
+                        <p><span>违法不良信息举报邮箱：help@giligili.com | 违法不良信息举报电话：00000000转1</span></p>
+                        <p><span>上海互联网举报中心 </span><span>| 12318全国文化市场举报网站/span></p>
+                        <p><span>网上有害信息举报专区：</span><span></span></p>
+                        <p><span>亲爱的市民朋友，上海警方反诈劝阻电话“96110”系专门针对避免您财产被骗受损而设，请您一旦收到来电，立即接听。</p>
+                        <p><span></span><span></span></p>
+                        <p><span></span><span></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
