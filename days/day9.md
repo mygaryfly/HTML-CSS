@@ -35,6 +35,14 @@ text-align 属性规定元素中的文本的水平对齐方式。
         <td style="text-align:center;">inherit</td>
         <td>规定应该从父元素继承 text-align 属性的值</td>        
     </tr>
+    <tr>
+        <td style="text-align:center;">start</td>
+        <td>把文本排列到流方向的起始处</td>        
+    </tr>
+    <tr>
+        <td style="text-align:center;">end</td>
+        <td>把文本排列到流方向的终点处</td>        
+    </tr>
 </table>
 
 <br>
