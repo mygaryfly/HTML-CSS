@@ -20,3 +20,4 @@
 6. [day-06 表单](./days/day6.md)
 7. [day-07 大名鼎鼎的JavaScript](./days/day7.md)
 8. [day-08 CSS之flex](./days/day8.md)
+9. [day-09 Alignment - 对齐](./days/day9.md)

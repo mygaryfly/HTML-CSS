@@ -133,9 +133,9 @@ eg:
 
 <table border="1">
     <tr>
-        <th style="background:black;">属性</td>
-        <th style="background:black;">值</td>
-        <th style="background:black;">描述</td>
+        <th style="background:black;">属性</th>
+        <th style="background:black;">值</th>
+        <th style="background:black;">描述</th>
     </tr>
     <tr>
         <td style="text-decoration:underline;color:darkgreen;">autofocus</td>
