@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alignment</title>
-    <style>
+    <style name="text-algin">
             #text-align {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
                 width: 800px;
                 height: 800px;
                 border: 1px solid black;
@@ -16,8 +20,8 @@
             #text-align  div {
                 float: left;
                 margin: 5px;
-                width: 150px;
-                height: 150px;
+                width: 200px;
+                height: 200px;
                 background-color: lightskyblue;
                 -direction: rtl;
                 
@@ -34,7 +38,58 @@
                 text-align: center;
             }
             #text-align>div:nth-child(4) {
+                box-sizing: border-box;
+                text-align:justify;
+                -padding:65px;
+            }
+            #text-align>div:nth-child(5) {
+                text-align:start;
+            }
+            #text-align>div:nth-child(6) {
                 text-align:end;
+            }
+            
+    </style>
+    <style name="vertical-align">
+
+        /*vertical-align1*/
+            .vertical-align1 {
+                width: 800px;
+                height: 800px;
+                border: 1px solid black;
+                background-color: hotpink;
+                list-style: none;
+                padding: 0;
+                
+            }
+
+            .vertical-align1  li {
+                float: left;
+                vertical-align: 200px;
+                line-height: 200px;
+                margin: 5px;
+                width: 200px;
+                height: 200px;
+                background-color: lightskyblue;
+                list-style: none;
+
+
+            }
+
+            .vertical-align1  span {
+                display: inline-block;
+            }
+
+        /*vertical-align2*/
+            .vertical-align2 {
+                width: 800px;
+                height: 800px;
+                border: 1px solid black;
+                background-color: hotpink;
+                list-style: none;
+                padding: 0;
+                vertical-align: middle;
+                    
             }
 
     </style>
@@ -44,7 +99,28 @@
         <div>text-align:left</div>
         <div><span>text-algin:right</span></div>
         <div>text-align:center</div>
-        <div>text-align:justify</div>
+        <div>text-align:justify | text-align:justify | text-align:justify | text-align:justify | text-align:justify | text-align:justify</div>
+        <div>text-align:start</div>
+        <div>text-align:end</div>
     </div>  
+    
+    <ul class="vertical-align1">
+        vertical-align1
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+        <li><span>vertical-align:line-height</span></li>
+
+    </ul>
+
+    <div class="vertical-align2">
+        vertical-align2
+        <img src="./img/fire.jpg" alt="">
+    </div>
 </body>
 </html>
