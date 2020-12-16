@@ -70,19 +70,19 @@ vertical-align 属性设置元素的垂直对齐方式。
 <table>
     <tr style="background: black;">
         <th style="text-align:center;">值</th>
-        <th>默认。元素放置在父元素的基线上。</th>        
+        <th>描述</th>        
+    </tr>
+    <tr>
+        <td style="text-align:center;">关键字值: baseline</td>
+        <td>默认。元素放置在父元素的基线上.</td>        
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: sub</td>
-        <td>把文本排列到左边。默认值：由浏览器决定。</td>        
-    </tr>
-    <tr>
-        <td style="text-align:center;">关键字值: right</td>
-        <td>垂直对齐文本的下标。</td>        
+        <td>降低元素的基线到父元素合适的下标位置。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: super</td>
-        <td>垂直对齐文本的上标.</td>        
+        <td>升高元素的基线到父元素合适的上标位置。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: top</td>
@@ -94,15 +94,15 @@ vertical-align 属性设置元素的垂直对齐方式。
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: middle</td>
-        <td>把此元素放置在父元素的中部。</td>        
+        <td>元素的中垂点与父元素的基线加1/2父元素中字母x的高度对齐。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: bottom</td>
-        <td>把元素的顶端与行中最低的元素的顶端对齐。</td>        
+        <td>把对齐的子元素的底端与line box底端对齐。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">关键字值: text-bottom	</td>
-        <td>把元素的底端与父元素字体的底端对齐。</td>        
+        <td>把元素的底端与父元素内容区域的底端对齐。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">长度值 | length: em / px</td>
@@ -114,15 +114,15 @@ vertical-align 属性设置元素的垂直对齐方式。
     </tr>
     <tr>
         <td style="text-align:center;">全局值： inherit</td>
-        <td>规定应该从父元素继承 text-align 属性的值</td>        
+        <td>采用父元素相关属性的相同的指定值。</td>        
     </tr>
     <tr>
         <td style="text-align:center;">全局值： initial</td>
-        <td>规定应该从父元素继承 text-align 属性的值</td>        
+        <td>设置属性的初始值——浏览器的默认定义值.</td>        
     </tr>
     <tr>
         <td style="text-align:center;">全局值： unset</td>
-        <td>规定应该从父元素继承 text-align 属性的值</td>        
+        <td> 关键字 initial 和 inherit的组合 | 如果有继承父级样式，则将该属性重新设置为继承的值，如果没有继承父级样式，则将该属性重新设置为初始值。</td>        
     </tr>
 </table>
 <br>
