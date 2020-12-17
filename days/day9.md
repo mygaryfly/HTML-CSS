@@ -136,6 +136,9 @@ vertical-align 属性设置元素的垂直对齐方式。
 
 #### **[2-1] vertical-align 和 line-height**
 
+`line-height`: “行高”顾名思意指一行文字的高度。具体来说是指两行文字间基线之间的距离。
+CSS中，`line-height`的位置大致有四种描述，即：基线，中线，顶线以及底线。
+* vertical-align中的四大属性：baseline ,middle ,top 以及bottom分别与之一一对应。
 有个属性值暴露了`vertical-align`和`line-height`之间的关系,就是“百分比值”
 
 `vertical-align`的百分比值不是相对于字体大小或者其他什么属性计算的，而是相对于`line-height`计算的。举个简单的例子，如下CSS代码：
@@ -152,6 +155,33 @@ vertical-align 属性设置元素的垂直对齐方式。
   vertical-align: -4px; /* = 40px * -10% */
 }
 ```
+#### **[2.1-1] x、x-height以及特殊的高度单位'ex'**
+字母x在css里面扮演着一个很重要的角色，因为字母x的下边缘就是基线所在的位置。而x-height指的就是字母x的高度，ex是一个尺寸单位，其大小是相对字母x的来计算的，即1ex就表示1个字母x的高度。
+
+我们在平时的开发中很少用到ex，因为ex是个相对单位。对于相对的东西，我们总是感觉很难控制，但这并不表明ex就一点用处都没有。我们可以利用ex就是一个x-height的特性来实现图标与文字的垂直居中，这样如论字体大小如何变化，都不会影响垂直居中的效果。代码如下：
+```css
+#exUse {
+width: 500px;
+height: 500px;
+border: 1px solid black;
+background-color: hotpink;
+}   
+.icon-arrow {
+    display: inline-block;
+    width: 50px;
+    height: 1ex;
+    background: url(./img/ftp3.png) no-repeat center; /*图片作为背景，i标签不会被图片本身尺寸撑开，只要高度是1ex，始终能与文字保持水平对齐*/
+    background-size: contain;
+}
+```
+```html
+<div id="exUse">
+    <span>我是一段文本</span>
+    <i class="icon-arrow"></i>
+</div>
+```
+
+<br>
 
 #### **[2-2] 为什么我的vertical-align属性不起作用？**
 > 知道了`vertical-align`是垂直对齐的意思，不少经验尚浅的同行会试着使用这个属性实现一些垂直方向上的对齐效果，会发现有时候可以，有时候又不起作用，不知道为什么？我们知道display也有很多属性值，其中以inline/inline-block/block三个最常见，这代表了页面上三种不同水平的元素。`vertical-align`可以称之为“`inline-block`依赖型元素”，也就是说，只有一个元素属于`inline`或是`inline-block`，其身上的vertical-align属性才会起作用。
@@ -182,3 +212,131 @@ vertical-align 属性设置元素的垂直对齐方式。
 > **需要特别注意的是**，区别于大写X，文字content area内容区的绝对居中位子是大写X的中间，因此小x中心点（与它对齐的其他元素），会略低于绝对中线！
 
 > tabel-cell: 单元格盒子相对于外面的表格行居中对齐
+
+
+### **三，居中对齐 align center **
+
+居中对齐分为水平居中以及垂直居中。CSS的布局中，使一个元素完完全全的居中，即左右/上下都居中是非常常见的需求。这里我们就来盘点一下常见的几种使元素居中的方法，以及优缺点。
+
+1）position定位 + transform。代码如下：
+```css
+// css
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.son {
+    position: absolute;
+    top: 50%;left: 50%;
+    transform: translate(-50%,-50%); /* 50%为自身尺寸的一半 */
+    width: 20px;
+    height: 20px;
+    background-color: lightyellow;
+
+
+}
+```
+```html
+//html
+<div class="container">
+    <div class="son"></div>
+</div>
+
+```
+缺点：一旦父元素没有格式化高度，则无法使用。这是css3样式，兼容性较差，只支持IE9+的浏览器。
+布局兼容性（是否常用）：一般。
+
+<br>
+2) position定位 + margin-left + margin-top
+
+```css
+// css
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.son {
+    position: absolute;
+    top: 50%;left: 50%;
+    margin-left: -20px; /*减去元素宽*/
+    margin-right: -20px; /*减去元素高*/
+    background-color: lightyellow;
+
+
+}
+```
+```html
+//html
+<div class="container">
+    <div class="son"></div>
+</div>
+缺点：1，一旦父元素没有格式化高度，则无法使用。2，必须知道子元素的宽高。
+布局兼容性（是否常用）：一般。
+
+```
+3）flex 弹性盒子布局
+```css
+//css
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.son {
+    width: 20px;
+    height: 20px;
+    background-color: lightyellow;
+}
+
+```
+```html
+//html
+<div class="container">
+    <div class="son"></div>
+</div>
+
+```
+优点：不需要计算父子的宽高比例，可以直接通过flex的对齐属性快速布局。
+缺点：上述代码是父元素对子元素的全局布局，所有父元素内的第一层子元素都被居中。如果有个别元素无需居中，则需另辟蹊径。
+布局兼容性（是否常用）：较好。
+
+3) postion + 四向归零 + margin:auto;
+```css
+//css
+.container {
+    position: relative;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.son {
+    position: absolute;top:0；bottom:0;left:0;right:0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background-color: lightyellow;
+}
+
+```
+```html
+//html
+<div class="container">
+    <div class="son"></div>
+</div>
+```
+优点：不需要计算父子的宽高比例。
+缺点：一旦父元素没有格式化高度，则无法使用。不支持IE7以下的浏览器。
+布局兼容性（是否常用）：较好。
+解析：当我们设置一个元素`top: 0; right: 0; bottom: 0; left: 0;`时，这个元素的尺寸表现为“格式化宽度和格式化高度”，和`<div>`的“正常流宽度”一样，同属于外部尺寸,也就是尺寸自动填充父级元素的可用尺寸的，然后，此时我们给.son设置尺寸，例如：`width: 20px;height: 20px;`此时宽高被限制，原本应该填充的空间就被多余了出来，这多余的空间就是`margin:auto;`计算的空间，因此，如果这时候，我们再设置一个`margin:auto;`,我们这个.son元素就水平和垂直方向同时居中了。
