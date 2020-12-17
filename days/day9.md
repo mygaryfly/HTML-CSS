@@ -276,10 +276,9 @@ background-color: hotpink;
 <div class="container">
     <div class="son"></div>
 </div>
+```
 缺点：1，一旦父元素没有格式化高度，则无法使用。2，必须知道子元素的宽高。
 布局兼容性（是否常用）：一般。
-
-```
 3）flex 弹性盒子布局
 ```css
 //css
