@@ -813,6 +813,64 @@
                 
                 flex: 9;
             }
+
+            /*侧边栏*/
+            .sidebar {
+                position: absolute;
+                left: 86%;
+                z-index: 10;
+                width: 4em;
+                border: 1px solid #e7e7e7;
+                border-radius: 10px;
+            }
+
+            .sidebar > ul:first-child {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+            }
+
+            .sidebar > ul:first-child > li {
+                padding: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .sidebar > ul:first-child > li:hover, .move > li:hover {
+                color: white;
+                background-color: #00a1d6;
+                transition: all .3s;
+            }
+
+            .move {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: 60px;
+                margin: 5px 0;
+            }
+            .move > li {
+                display: inherit;
+                justify-content: center;
+                width: 100%;
+                padding: 5px 0;
+            }
+            .move img {
+                transform: rotate(90deg);
+                width: 50%;
+                height: 80%;
+
+            }
+
+            .move > li:nth-child(2) {
+                font-size: 1.5em;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+
+            
         </style>
     </head>
     <body style="display:flex; zoom: 1;">
@@ -962,7 +1020,36 @@
                     <li class="rightText" style="display:inline-flex;align-items:center;width: 4.5vw;"><img src="./img/d3.jpg" alt="" style="width: 1.5vw;height: 1.5vw;"><a style="display:flex;flex-wrap: nowrap;"href="" target="_blank">音乐Plus</a></li>
                 </ul>
             </div>
-
+            <div class="sidebar">
+                <ul>
+                    <li>直播</li>
+                    <li>动画</li>
+                    <li>番剧</li>
+                    <li>国创</li>
+                    <li>漫画</li>
+                    <li>音乐</li>
+                    <li>舞蹈</li>
+                    <li>游戏</li>
+                    <li>知识</li>
+                    <li>课堂</li>
+                    <li>数码</li>
+                    <li>生活</li>
+                    <li>美食</li>
+                    <li>鬼畜</li>
+                    <li>时尚</li>
+                    <li>资讯</li>
+                    <li>娱乐</li>
+                    <li>专栏</li>
+                    <li>电影</li>
+                    <li>影视</li>
+                    <li>纪录片</li>
+                    <li>TV剧</li>
+                </ul>
+                <ul class="move">
+                    <li><img src="./img/exchange.png" alt=""></li>
+                    <li>^</li>
+                </ul>
+            </div>
             <div class="recommend">
                 <div style="grid-row-start: 1;grid-row-end: 3; grid-column-start: 1;grid-column-end: 3;">
                     <div class="slider">
@@ -1284,5 +1371,7 @@
                 </div>
             </div>
         </div>
+
+
     </body>
 </html>
